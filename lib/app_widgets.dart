@@ -85,8 +85,7 @@ class AppTextField extends StatelessWidget {
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
-              borderSide:
-                  const BorderSide(color: AppColors.accent, width: 1.5),
+              borderSide: const BorderSide(color: AppColors.accent, width: 1.5),
             ),
             errorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
@@ -94,8 +93,7 @@ class AppTextField extends StatelessWidget {
             ),
             focusedErrorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
-              borderSide:
-                  const BorderSide(color: AppColors.error, width: 1.5),
+              borderSide: const BorderSide(color: AppColors.error, width: 1.5),
             ),
             errorStyle: const TextStyle(color: AppColors.error, fontSize: 11),
           ),
@@ -197,8 +195,7 @@ class DetailRow extends StatelessWidget {
               color: (iconColor ?? AppColors.accent).withOpacity(0.1),
               borderRadius: BorderRadius.circular(10),
             ),
-            child: Icon(icon,
-                color: iconColor ?? AppColors.accent, size: 18),
+            child: Icon(icon, color: iconColor ?? AppColors.accent, size: 18),
           ),
           const SizedBox(width: 14),
           Expanded(
@@ -234,34 +231,51 @@ class DetailRow extends StatelessWidget {
 
 // ── Snack helpers ──────────────────────────────────────────────────────────
 void showSuccessSnack(BuildContext context, String msg) {
-  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-    content: Row(children: [
-      const Icon(Icons.check_circle_rounded,
-          color: AppColors.accent, size: 18),
-      const SizedBox(width: 10),
-      Expanded(
-          child: Text(msg,
-              style: const TextStyle(color: AppColors.textPrimary))),
-    ]),
-    backgroundColor: AppColors.cardBg,
-    behavior: SnackBarBehavior.floating,
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-    margin: const EdgeInsets.all(16),
-  ));
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(
+      content: Row(
+        children: [
+          const Icon(
+            Icons.check_circle_rounded,
+            color: AppColors.accent,
+            size: 18,
+          ),
+          const SizedBox(width: 10),
+          Expanded(
+            child: Text(
+              msg,
+              style: const TextStyle(color: AppColors.textPrimary),
+            ),
+          ),
+        ],
+      ),
+      backgroundColor: AppColors.cardBg,
+      behavior: SnackBarBehavior.floating,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      margin: const EdgeInsets.all(16),
+    ),
+  );
 }
 
 void showErrorSnack(BuildContext context, String msg) {
-  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-    content: Row(children: [
-      const Icon(Icons.error_rounded, color: AppColors.error, size: 18),
-      const SizedBox(width: 10),
-      Expanded(
-          child: Text(msg,
-              style: const TextStyle(color: AppColors.textPrimary))),
-    ]),
-    backgroundColor: AppColors.cardBg,
-    behavior: SnackBarBehavior.floating,
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-    margin: const EdgeInsets.all(16),
-  ));
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(
+      content: Row(
+        children: [
+          const Icon(Icons.error_rounded, color: AppColors.error, size: 18),
+          const SizedBox(width: 10),
+          Expanded(
+            child: Text(
+              msg,
+              style: const TextStyle(color: AppColors.textPrimary),
+            ),
+          ),
+        ],
+      ),
+      backgroundColor: AppColors.cardBg,
+      behavior: SnackBarBehavior.floating,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      margin: const EdgeInsets.all(16),
+    ),
+  );
 }
